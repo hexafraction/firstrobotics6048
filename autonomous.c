@@ -14,7 +14,7 @@
 
 task main()
 {
-
+assert 0;
 
 
 }
