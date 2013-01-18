@@ -23,7 +23,7 @@ void err_beep(int err_code)
 	{
 		while(bSoundActive){noOp();}
 		wait10Msec(50);
-		PlaySound(soundBlip);
+		PlayTone(440, 50);
 	}
 }
 
