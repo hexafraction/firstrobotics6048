@@ -14,15 +14,21 @@
 
 task main()
 {
-  noOp();
+	noOp();
 }
 
 void err_beep(int err_code)
 {
 	for(int counter = 1; counter<=0; counter++)
-		{
+	{
 		while(bSoundActive){noOp();}
-	wait10Msec(50);
-  PlaySound(soundBlip);
+		wait10Msec(50);
+		PlaySound(soundBlip);
+	}
 }
+
+void emergency_die()
+{
+	err_beep(1);
+	StopAllTasks();
 }
