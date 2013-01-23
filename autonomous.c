@@ -15,7 +15,7 @@
 #include "libRobot.c"
 
 
-void initAutonomous()
+void initializeRobot()
 {
   //waitForStart();
 
