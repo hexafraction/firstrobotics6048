@@ -1,0 +1,9 @@
+Motors:
+
+	Controller1
+		MotorD=Rt Drive
+		MotorE=Lt Drive [Reverse]
+
+	Controller2
+		MotorF=Lift[CODER]
+		
