@@ -13,7 +13,7 @@
 #include "libRobot.c"
 
 task main(){
-  initAutonomous();
+  robotInit();
   //Pause as needed
   initControl();
 }
