@@ -39,14 +39,14 @@ void err_beep(int err_code)
 	}
 }
 
-void lift_up(int tgt_Height)
-{
-	motor[motorF]=LiftTgtRate;
-	while(nMotorEncoder[motorF]<=LiftCutoffPos){
-		wait1Msec(1);
-	}
-	motor[motorF]=0;
-}
+//void lift_up(int tgt_Height)
+//{
+//	motor[motorF]=LiftTgtRate;
+//	while(nMotorEncoder[motorF]<=LiftCutoffPos){
+//		wait1Msec(1);
+//	}
+//	motor[motorF]=0;
+//}
 
 void emergency_die()
 {

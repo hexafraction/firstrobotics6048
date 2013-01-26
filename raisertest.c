@@ -1,7 +1,7 @@
 #pragma config(Hubs,  S1, HTServo,  HTMotor,  HTMotor,  none)
 #pragma config(Sensor, S1,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S2,     ,               sensorHiTechnicIRSeeker1200)
-#pragma config(Motor,  mtr_S1_C2_1,     motorD,        tmotorTetrix, PIDControl, encoder)
+#pragma config(Motor,  mtr_S1_C2_1,     motorD,        tmotorTetrix, PIDControl, reversed, encoder)
 #pragma config(Motor,  mtr_S1_C2_2,     motorE,        tmotorTetrix, PIDControl, encoder)
 #pragma config(Motor,  mtr_S1_C3_1,     motorF,        tmotorTetrix, PIDControl, encoder)
 #pragma config(Motor,  mtr_S1_C3_2,     motorG,        tmotorTetrix, PIDControl, reversed, encoder)
@@ -15,10 +15,10 @@
 
 void lift_up(int tgt_Height)
 {
-
-motor[motorD]=20;
-	motor[motorE]=20;
-	while(nMotorEncoder[motorF]<14400){
+	nMotorEncoder[motorE]=0;
+	//motor[motorE]=60;
+	motor[motorD]=60;
+	while(nMotorEncoder[motorE]<99000){
 		wait1Msec(1);
 	}
 	motor[motorD]=0;
@@ -26,9 +26,10 @@ motor[motorD]=20;
 }
 
 void smoothMoveLiftDown(){
-	motor[motorD]=-10;
-	motor[motorE]=-10;
-	while(nMotorEncoder[motorF]>160){wait1Msec(1);
+	nMotorEncoder[motorE]=0;
+	motor[motorD]=-40;
+	//motor[motorE]=-40;
+	while(nMotorEncoder[motorE]>=-14000){wait1Msec(1);
 	}
 	motor[motorD]=0;
 	motor[motorE]=0;
@@ -36,7 +37,7 @@ void smoothMoveLiftDown(){
 task main()
 {
 
-	lift_up(1440);
-//smoothMoveLiftDown();
+	//lift_up(1440);
+	smoothMoveLiftDown();
 
 }
