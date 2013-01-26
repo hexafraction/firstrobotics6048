@@ -1,0 +1,19 @@
+//move left
+//lift arm
+//sense ring
+//lower arm
+//move right
+//lift arm
+//sense ring
+//lower arm
+//backup
+//turn clockwise 90 degrees
+//sense third pvc pipe
+//move forwards
+//release ring 1
+//backup
+//release ring 2
+//backup
+//lower arm
+//turn clockwise 90 degrees
+//go back to step 2 and repeat
